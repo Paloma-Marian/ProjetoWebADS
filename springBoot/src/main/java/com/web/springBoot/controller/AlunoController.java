@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.web.springBoot.entities.Aluno;
 import com.web.springBoot.repository.AlunoRepository;
-import com.web.springBoot.repository.MateriaRepository;
 
 @RestController
 @RequestMapping(value = "/alunos")
@@ -25,9 +24,6 @@ public class AlunoController {
 
 	@Autowired
 	AlunoRepository repositorioAluno;
-	
-	@Autowired
-	MateriaRepository repositorioMateria;
 	
 	@GetMapping()
 	public ResponseEntity<List<Aluno>> getBuscaTodosAlunos() {
@@ -67,7 +63,6 @@ public class AlunoController {
 			aluno_aux.setNome(aluno.getNome());
 			aluno_aux.setCpf(aluno.getCpf());
 			aluno_aux.setEmail(aluno.getEmail());
-			aluno_aux.setMaterias(aluno.getMaterias());
 			aluno_aux.setStatus(aluno.getStatus());
 			repositorioAluno.save(aluno_aux);
 			return ResponseEntity.status(HttpStatus.OK).body(aluno_aux);

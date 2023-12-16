@@ -65,6 +65,7 @@ public class MateriaController {
 			materia_aux.setNota2(materia.getNota2());
 			materia_aux.setNota3(materia.getNota3());
 			materia_aux.setNotafim(materia.getNotafim());
+			materia_aux.setAluno(materia.getAluno());
 			materia_aux.setStatus(materia.getStatus());
 			return ResponseEntity.status(HttpStatus.OK).body(materia_aux);
 		}catch (Exception exception_AlterarMateria){

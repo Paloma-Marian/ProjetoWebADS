@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,6 +28,9 @@ public class Materia {
 	private Double notafim;
 	@Column( length = 10, nullable = false)
 	private String status;
+	@OneToMany
+	@JoinColumn(name = "aluno_id")
+	private Aluno aluno;
 	
 	//Getters e Setters
 	public Long getId() {
@@ -70,9 +75,16 @@ public class Materia {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public Aluno getAluno() {
+		return aluno;
+	}
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
 	
 	//Constructor
-	public Materia(Long id, String nome, Double nota1, Double nota2, Double nota3, Double notafim, String status) {
+	public Materia(Long id, String nome, Double nota1, Double nota2, Double nota3, Double notafim, String status,
+			Aluno aluno) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -81,5 +93,6 @@ public class Materia {
 		this.nota3 = nota3;
 		this.notafim = notafim;
 		this.status = status;
-	}	
+		this.aluno = aluno;
+	}
 }
