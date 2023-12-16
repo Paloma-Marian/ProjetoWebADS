@@ -26,29 +26,10 @@ public class MateriaController {
 	MateriaRepository repositorioMateria;
 	
 	@GetMapping
-	public ResponseEntity<List<Materia>> buscaTodosMaterias() {
-		return ResponseEntity.status(HttpStatus.OK).body(repositorioMateria.findAll());
-	}
-	
-	@PostMapping()
-	public ResponseEntity<Materia> inserirMateria(@RequestBody Materia materia) {
-		Materia materia_aux = repositorioMateria.save(materia);
-		return ResponseEntity.status(HttpStatus.CREATED).body(materia_aux);
-	}
-	
-	@PutMapping("/{id_materia}")
-	public ResponseEntity<Materia> alterarMateria(@PathVariable("id_materia")Long id_Materia, @RequestBody Materia materia){
-		Optional<Materia> optionalMateria = repositorioMateria.findById(id_Materia);
+	public ResponseEntity<List<Materia>> getBuscaTodosMaterias() {
 		try {
-			Materia materia_aux = optionalMateria.get();
-			materia_aux.setNome(materia.getNome());
-			materia_aux.setNota1(materia.getNota1());
-			materia_aux.setNota2(materia.getNota2());
-			materia_aux.setNota3(materia.getNota3());
-			materia_aux.setNotafim(materia.getNotafim());
-			materia_aux.setStatus(materia.getStatus());
-			return ResponseEntity.status(HttpStatus.OK).body(materia_aux);
-		}catch (Exception e){
+			return ResponseEntity.status(HttpStatus.OK).body(repositorioMateria.findAll());	
+		} catch (Exception exception_BuscaTodosMaterias) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}
@@ -59,19 +40,46 @@ public class MateriaController {
 		try {
 			Materia materia_aux = optionalMateria.get();
 			return ResponseEntity.status(HttpStatus.OK).body(materia_aux);
-		} catch (Exception e) {
+		} catch (Exception exception_BuscaMateria) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@PostMapping()
+	public ResponseEntity<Materia> postInserirMateria(@RequestBody Materia materia) {
+		try {
+			Materia materia_aux = repositorioMateria.save(materia);
+			return ResponseEntity.status(HttpStatus.CREATED).body(materia_aux);	
+		} catch (Exception exception_InserirMateria) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@PutMapping("/{id_materia}")
+	public ResponseEntity<Materia> putAlterarMateria(@PathVariable("id_materia")Long id_Materia, @RequestBody Materia materia){
+		Optional<Materia> optionalMateria = repositorioMateria.findById(id_Materia);
+		try {
+			Materia materia_aux = optionalMateria.get();
+			materia_aux.setNome(materia.getNome());
+			materia_aux.setNota1(materia.getNota1());
+			materia_aux.setNota2(materia.getNota2());
+			materia_aux.setNota3(materia.getNota3());
+			materia_aux.setNotafim(materia.getNotafim());
+			materia_aux.setStatus(materia.getStatus());
+			return ResponseEntity.status(HttpStatus.OK).body(materia_aux);
+		}catch (Exception exception_AlterarMateria){
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Materia> excluirMateria(@PathVariable("id") Long id){
+	public ResponseEntity<Materia> deleteMateria(@PathVariable("id") Long id){
 		Optional<Materia> optionalMateria = repositorioMateria.findById(id);
 		try {
 			Materia materia_aux = optionalMateria.get();
 			repositorioMateria.delete(materia_aux);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-		} catch (Exception e) {
+		} catch (Exception exception_deleteMateria) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}

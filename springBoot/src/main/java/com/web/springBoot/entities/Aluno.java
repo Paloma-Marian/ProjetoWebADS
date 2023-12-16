@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -24,7 +25,8 @@ public class Aluno {
 	@Column( length = 10, nullable = false)
 	private String status;
 	@OneToMany
-	private Materia materias;
+	@JoinColumn(name = "materia_id")
+	private Materia materia;
 	
 	//Getters e Setters
 	public Long getId() {
@@ -58,10 +60,10 @@ public class Aluno {
 		this.status = status;
 	}
 	public Materia getMaterias() {
-		return materias;
+		return materia;
 	}
 	public void setMaterias(Materia materias) {
-		this.materias = materias;
+		this.materia = materias;
 	}
 	
 	//Constructor
@@ -72,6 +74,6 @@ public class Aluno {
 		this.cpf = cpf;
 		this.email = email;
 		this.status = status;
-		this.materias = materias;
+		this.materia = materias;
 	}
 }
