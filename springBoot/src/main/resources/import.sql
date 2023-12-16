@@ -1,3 +1,3 @@
-insert into tb_contatos(nome, email)values('maria','maria@gmail.com');
-insert into tb_contatos(nome, email)values('joao','joao@gmail.com');
-insert into tb_contatos(nome, email)values('pedro','pedro@gmail.com');
+insert into tb_materias(nome, nota1, nota2, nota3, notafim, status)values('Matemática','0.0','0.0','0.0','0.0','CURSANDO');
+insert into tb_materias(nome, nota1, nota2, nota3, notafim, status)values('Português','0.0','0.0','0.0','0.0','CURSANDO');
+insert into tb_materias(nome, nota1, nota2, nota3, notafim, status)values('Inglês','0.0','0.0','0.0','0.0','CURSANDO');
