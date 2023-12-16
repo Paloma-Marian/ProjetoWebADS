@@ -9,22 +9,22 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "tb_turmas")
-public class Turma {
+@Table (name = "tb_alunos")
+public class Aluno {
 
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column( length = 50, nullable = false)
 	private String nome;
-	@Column( length = 1, nullable = false)
-	private Integer semestre;
-	@Column( length = 1, nullable = false)
-	private Integer data;
+	@Column( length = 11 , nullable = false)
+	private Integer cpf;
+	@Column( length = 50, nullable = false)
+	private String email;
 	@Column( length = 10, nullable = false)
 	private String status;
 	@OneToMany
-	private Aluno alunos;
+	private Materia materias;
 	
 	//Getters e Setters
 	public Long getId() {
@@ -39,17 +39,17 @@ public class Turma {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getSemestre() {
-		return semestre;
+	public Integer getCpf() {
+		return cpf;
 	}
-	public void setSemestre(Integer semestre) {
-		this.semestre = semestre;
+	public void setCpf(Integer cpf) {
+		this.cpf = cpf;
 	}
-	public Integer getData() {
-		return data;
+	public String getEmail() {
+		return email;
 	}
-	public void setData(Integer data) {
-		this.data = data;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getStatus() {
 		return status;
@@ -57,21 +57,21 @@ public class Turma {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Aluno getAlunos() {
-		return alunos;
+	public Materia getMaterias() {
+		return materias;
 	}
-	public void setAlunos(Aluno alunos) {
-		this.alunos = alunos;
+	public void setMaterias(Materia materias) {
+		this.materias = materias;
 	}
 	
 	//Constructor
-	public Turma(Long id, String nome, Integer semestre, Integer data, String status, Aluno alunos) {
+	public Aluno(Long id, String nome, Integer cpf, String email, String status, Materia materias) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.semestre = semestre;
-		this.data = data;
+		this.cpf = cpf;
+		this.email = email;
 		this.status = status;
-		this.alunos = alunos;
+		this.materias = materias;
 	}
 }
