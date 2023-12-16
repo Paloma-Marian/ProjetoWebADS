@@ -19,7 +19,7 @@ import com.web.springBoot.entities.Materia;
 import com.web.springBoot.repository.MateriaRepository;
 
 @RestController
-@RequestMapping(value = "/materiais")
+@RequestMapping(value = "/materias")
 public class MateriaController {
 	
 	@Autowired

@@ -1,10 +1,13 @@
 package com.web.springBoot.entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -19,12 +22,13 @@ public class Turma {
 	private String nome;
 	@Column( length = 1, nullable = false)
 	private Integer semestre;
-	@Column( length = 1, nullable = false)
-	private Integer data;
+	@Column(length = 10, nullable = false)
+	private LocalDate data;
 	@Column( length = 10, nullable = false)
 	private String status;
 	@ManyToOne
-	private Aluno alunos;
+	@JoinColumn(name = "aluno_id")
+	private Aluno aluno;
 	
 	//Getters e Setters
 	public Long getId() {
@@ -45,10 +49,10 @@ public class Turma {
 	public void setSemestre(Integer semestre) {
 		this.semestre = semestre;
 	}
-	public Integer getData() {
+	public LocalDate getData() {
 		return data;
 	}
-	public void setData(Integer data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 	public String getStatus() {
@@ -58,20 +62,20 @@ public class Turma {
 		this.status = status;
 	}
 	public Aluno getAlunos() {
-		return alunos;
+		return aluno;
 	}
-	public void setAlunos(Aluno alunos) {
-		this.alunos = alunos;
+	public void setAlunos(Aluno aluno) {
+		this.aluno = aluno;
 	}
 	
 	//Constructor
-	public Turma(Long id, String nome, Integer semestre, Integer data, String status, Aluno alunos) {
+	public Turma(Long id, String nome, Integer semestre, LocalDate data, String status, Aluno aluno) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.semestre = semestre;
 		this.data = data;
 		this.status = status;
-		this.alunos = alunos;
+		this.aluno = aluno;
 	}
 }
