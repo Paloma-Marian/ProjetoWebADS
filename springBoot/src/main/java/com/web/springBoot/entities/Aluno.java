@@ -16,8 +16,8 @@ public class Aluno {
 	private Long id;
 	@Column( length = 50, nullable = false)
 	private String nome;
-	@Column( length = 11 , nullable = false)
-	private Integer cpf;
+	@Column( length = 20 , nullable = false)
+	private String cpf;
 	@Column( length = 50, nullable = false)
 	private String email;
 	@Column( length = 10, nullable = false)
@@ -36,10 +36,10 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getEmail() {
@@ -56,7 +56,7 @@ public class Aluno {
 	}
 	
 	//Constructor
-	public Aluno(Long id, String nome, Integer cpf, String email, String status, Materia materias) {
+	public Aluno(Long id, String nome, String cpf, String email, String status, Materia materias) {
 		super();
 		this.id = id;
 		this.nome = nome;

@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,7 +23,7 @@ public class Turma {
 	private Integer data;
 	@Column( length = 10, nullable = false)
 	private String status;
-	@OneToMany
+	@ManyToOne
 	private Aluno alunos;
 	
 	//Getters e Setters
