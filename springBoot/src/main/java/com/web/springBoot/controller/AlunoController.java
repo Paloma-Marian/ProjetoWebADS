@@ -37,7 +37,7 @@ public class AlunoController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Aluno> getBuscaAluno(@PathVariable("id") Long id){
+	public ResponseEntity<Aluno> getBuscaAluno(@PathVariable("id") long id){
 		Optional<Aluno> optionalAluno = repositorioAluno.findById(id);
 		try {
 			Aluno aluno_aux = optionalAluno.get();
