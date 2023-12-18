@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+a:link, a:visited {
+  color: black;
+  border-radius: 12px;
+  border: 2px solid cornflowerblue;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#grad1 {
+  height: 200px;
+  background-color: aqua; /* For browsers that do not support gradients */
+  background-image: linear-gradient( aqua, yellow);
+}
