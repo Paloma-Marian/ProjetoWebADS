@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 
 export default function AlterarAluno(){
@@ -24,7 +24,7 @@ export default function AlterarAluno(){
         }).then(aluno=> alert('Aluno alterado com sucesso!'))
     }
 
-    useState(() => {
+    useEffect(() => {
         fetch(`http://localhost:8080/alunos/${id_aluno}`)
         .then(data => data.json())
         .then(aluno_aux => {
