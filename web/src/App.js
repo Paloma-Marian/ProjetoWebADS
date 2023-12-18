@@ -5,13 +5,11 @@ import {Link, Outlet} from 'react-router-dom';
 function App() {
   return (
     <div className="App" id="grad1">
-      <div >
+      <div>
         <hr/>
         <nav>
-          <Link to='/alunos/cadastroAluno'>Cadastro Aluno</Link>
-          <Link to='/alunos/consultaAluno'>Consulta Aluno</Link>
-          <Link to='/alunos/cadastroMateria'>Cadastro Materia</Link>
-          <Link to='/alunos/cadastroTurma'>Cadastro Turma</Link>
+          <Link className='btn btn-outline-primary fw-bold' to='/alunos/cadastroAluno'>Cadastro Aluno</Link>
+          <Link className='btn btn-outline-primary fw-bold' to='/alunos/consultaAluno'>Consulta Aluno</Link>
         </nav>
         <main>
           <Outlet/>

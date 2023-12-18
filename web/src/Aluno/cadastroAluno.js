@@ -21,7 +21,7 @@ export default function CadastroAluno(){
         }).then(aluno=> alert('Aluno cadastrado com sucesso!'))
     }
     return(
-        <div className="conteiner">
+        <div className="container">
             <h2 className="text-center">Novo Aluno</h2>
 
             <div class="input-group input-group-sm mb-3">

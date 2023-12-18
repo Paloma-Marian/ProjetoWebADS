@@ -36,7 +36,7 @@ export default function Editar(){
     },[])
 
     return(
-        <div className="conteiner">
+        <div className="container">
             <h2 className="text-center">Alterar Aluno</h2>
 
             <div class="input-group input-group-sm mb-3">

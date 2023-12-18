@@ -50,5 +50,5 @@ a:link, a:visited {
 #grad1 {
   height: 200px;
   background-color: aqua; /* For browsers that do not support gradients */
-  background-image: linear-gradient( aqua, yellow);
+  background-image: linear-gradient(blueviolet, white);
 }

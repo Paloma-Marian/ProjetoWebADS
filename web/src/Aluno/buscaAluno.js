@@ -10,18 +10,14 @@ export default function BuscaAluno(mostra){
     }
 
     return(
-        <div className="container">
-            <div className='card col-md-4 offset-md-4'>
-                <div className='card-body'>
-                    <h2 className="text-center">Alunos</h2> 
-                    
-                    <img src='https://news.comschool.com.br/wp-content/uploads/2020/02/vaga-programador-front-end.jpg'
-                        className='card-img-top' alt='...' />
-
-                    <div className='card-text'>
+        <div className='container'>
+            <div className="card border-primary mb-3 col-md-6 offset-md-3">
+                <img src='https://news.comschool.com.br/wp-content/uploads/2020/02/vaga-programador-front-end.jpg'className='card-img-top' alt='...' />
+                <div className="text-center card-header">
                         <span>Nome:</span>
                         <span>{mostra.aluno.nome}</span>
                     </div>
+                <div className='card-body text-primary'>
                     <div className='card-text'>
                         <span>CPF:</span>
                         <span>{mostra.aluno.cpf}</span>
