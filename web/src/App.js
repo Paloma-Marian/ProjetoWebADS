@@ -8,7 +8,9 @@ function App() {
       <div >
         <hr/>
         <nav>
-          <Link to='/alunos/cadastroAluno'>CadastroAluno</Link>
+          <Link to='/alunos/cadastroAluno'>Cadastro Aluno</Link>
+          <Link to='/alunos/cadastroMateria'>Cadastro Materia</Link>
+          <Link to='/alunos/cadastroTurma'>Cadastro Turma</Link>
         </nav>
         <main>
           <Outlet/>
