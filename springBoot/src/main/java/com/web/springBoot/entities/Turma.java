@@ -68,6 +68,11 @@ public class Turma {
 		this.aluno = aluno;
 	}
 	
+	public Turma() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	//Constructor
 	public Turma(Long id, String nome, Integer semestre, LocalDate data, String status, Aluno aluno) {
 		super();

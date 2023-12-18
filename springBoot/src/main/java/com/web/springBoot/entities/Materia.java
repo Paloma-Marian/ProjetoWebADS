@@ -83,6 +83,11 @@ public class Materia {
 		this.aluno = aluno;
 	}
 	
+	public Materia() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	//Constructor
 	public Materia(Long id, String nome, Double nota1, Double nota2, Double nota3, Double notafim, String status,
 			Aluno aluno) {

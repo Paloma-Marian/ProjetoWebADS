@@ -29,11 +29,7 @@ public class AlunoController {
 	
 	@GetMapping()
 	public ResponseEntity<List<Aluno>> getBuscaTodosAlunos() {
-		try {
-			return ResponseEntity.status(HttpStatus.OK).body(repositorioAluno.findAll());	
-		} catch (Exception exception_BuscaTodosAlunos) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}		
+		return ResponseEntity.status(HttpStatus.OK).body(repositorioAluno.findAll());	
 	}
 	
 	@GetMapping("/{id}")

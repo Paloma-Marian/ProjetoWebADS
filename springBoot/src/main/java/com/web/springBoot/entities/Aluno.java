@@ -55,6 +55,10 @@ public class Aluno {
 		this.status = status;
 	}
 	
+	public Aluno() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	//Constructor
 	public Aluno(Long id, String nome, String cpf, String email, String status, Materia materias) {
 		super();
