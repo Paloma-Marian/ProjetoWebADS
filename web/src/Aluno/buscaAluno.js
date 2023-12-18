@@ -32,7 +32,7 @@ export default function BuscaAluno(mostra){
                     </div>
 
                     <div className="d-grid gap-2 col-6 mx-auto">
-                        <Link to={`/alunos/editar/${mostra.aluno.id}`}>
+                        <Link to={`/alunos/alterar/${mostra.aluno.id}`}>
                             <button
                               className="btn btn-outline-primary fw-bold"
                             >Editar</button>

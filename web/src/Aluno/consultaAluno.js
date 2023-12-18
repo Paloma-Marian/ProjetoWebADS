@@ -7,7 +7,7 @@ export default function ConsultarAluno(){
     function buscaAlunos() {
         fetch("http://localhost:8080/alunos")
         .then(data => data.json())
-        .then(response => setAlunos(response))
+        .then(aluno_aux => setAlunos(aluno_aux))
     } useEffect(buscaAlunos, [])
 
     return(

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom'
 
-export default function Editar(){
+export default function AlterarAluno(){
     const[nome, setNome] = useState('');
     const[cpf, setCpf] = useState('');
     const[email, setEmail] = useState('');
@@ -27,11 +27,11 @@ export default function Editar(){
     useState(() => {
         fetch(`http://localhost:8080/alunos/${id_aluno}`)
         .then(data => data.json())
-        .then(response => {
-            setNome(response.nome)
-            setCpf(response.cpf)
-            setEmail(response.email)
-            setStatus(response.status)
+        .then(aluno_aux => {
+            setNome(aluno_aux.nome)
+            setCpf(aluno_aux.cpf)
+            setEmail(aluno_aux.email)
+            setStatus(aluno_aux.status)
         })
     },[])
 

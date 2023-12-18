@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import CadastroAluno from './Aluno/cadastroAluno';
 import ConsultaAluno from './Aluno/consultaAluno';
-import Editar from './Aluno/alteraAluno';
+import AlterarAluno from './Aluno/alteraAluno';
 
 import CadastroMateria from './Materia/cadastroMateria';
 
@@ -27,8 +27,8 @@ const rotas = createBrowserRouter([
         element: <ConsultaAluno/>,
       },  
       {
-        path : "/alunos/editar/:id_aluno",
-        element: <Editar/>,
+        path : "/alunos/alterar/:id_aluno",
+        element: <AlterarAluno/>,
       },
       {
         path: "/alunos/cadastroMateria",
