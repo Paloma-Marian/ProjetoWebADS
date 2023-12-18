@@ -15,13 +15,13 @@ export default function CadastroMateria(){
             return
         }
 
-        let Materia = {nome, nota1, nota2, nota3, notafim, status, aluno}
+        var Materia = {aluno : Number(aluno) ,nome : nome, nota1 : nota1, nota2 : nota2, nota3 : nota3, notafim : notafim, status : status}
 
         fetch('http://localhost:8080/materias',
         {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(nome | nota1 | nota2 | nota3 | notafim | status)
+            body: JSON.stringify(Materia)
         }).then(x=> alert('Matéria cadastrado ao aluno com sucesso!'))
     }
     return(
@@ -32,19 +32,19 @@ export default function CadastroMateria(){
             <input  type="text" onChange={nome => setNome(nome.target.value)}></input>
 
             <label className="form-label">1ª nota:</label>
-            <input  type="number" onChange={cpf => setNota1(cpf.target.value)}></input>
+            <input  type="number" onChange={nota1 => setNota1(nota1.target.value)}></input>
             
             <label className="form-label">2ª nota:</label>
-            <input  type="number" onChange={email => setNota2(email.target.value)}></input>
+            <input  type="number" onChange={nota2 => setNota2(nota2.target.value)}></input>
 
             <label className="form-label">3ª nota:</label>
-            <input  type="number" onChange={cpf => setNota3(cpf.target.value)}></input>
+            <input  type="number" onChange={nota3 => setNota3(nota3.target.value)}></input>
 
             <label className="form-label">Nota final:</label>
-            <input  type="number" onChange={cpf => setNotafim(cpf.target.value)}></input>
+            <input  type="number" onChange={notafim => setNotafim(notafim.target.value)}></input>
 
             <label className="form-label">Aluno:</label>
-            <input  type="number" onChange={aluno => setAluno(aluno.target.value)}></input>
+            <input  type="number" onChange={aluno => setAluno(aluno.target.valueAsNumber)}></input>
 
             <label className="form-label">Status:</label>
             <input  type="text" onChange={status => setStatus(status.target.value)}></input>
