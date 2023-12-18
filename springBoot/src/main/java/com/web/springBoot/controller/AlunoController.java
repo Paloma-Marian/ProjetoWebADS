@@ -69,9 +69,9 @@ public class AlunoController {
 		}
 	}
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Aluno> deleteAluno(@PathVariable("id") Long id){
-		Optional<Aluno> optionalAluno = repositorioAluno.findById(id);
+	@DeleteMapping("/{id_aluno}")
+	public ResponseEntity<Aluno> deleteAluno(@PathVariable("id_aluno") long id_aluno){
+		Optional<Aluno> optionalAluno = repositorioAluno.findById(id_aluno);
 		try {
 			Aluno aluno_aux = optionalAluno.get();
 			repositorioAluno.delete(aluno_aux);

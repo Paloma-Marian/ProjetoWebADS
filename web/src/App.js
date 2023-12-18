@@ -9,6 +9,7 @@ function App() {
         <hr/>
         <nav>
           <Link to='/alunos/cadastroAluno'>Cadastro Aluno</Link>
+          <Link to='/alunos/consultaAluno'>Consulta Aluno</Link>
           <Link to='/alunos/cadastroMateria'>Cadastro Materia</Link>
           <Link to='/alunos/cadastroTurma'>Cadastro Turma</Link>
         </nav>

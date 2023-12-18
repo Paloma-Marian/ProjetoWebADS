@@ -4,8 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import CadastroAluno from './Aluno/cadastroAluno';
+import ConsultaAluno from './Aluno/consultaAluno';
+import Editar from './Aluno/alteraAluno';
+
 import CadastroMateria from './Materia/cadastroMateria';
+
 import CadastroTurma from './Turma/cadastroTurma';
 
 const rotas = createBrowserRouter([
@@ -16,6 +21,14 @@ const rotas = createBrowserRouter([
       {
         path: "/alunos/cadastroAluno",
         element: <CadastroAluno/>,
+      },
+      {
+        path: "/alunos/consultaAluno",
+        element: <ConsultaAluno/>,
+      },  
+      {
+        path : "/alunos/editar/:id_aluno",
+        element: <Editar/>,
       },
       {
         path: "/alunos/cadastroMateria",
